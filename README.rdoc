@@ -1,0 +1,22 @@
+= zuora4r
+
+Client for Zuora API
+
+This is a wrapper for sample code provided by Zuora - http://developer.zuora.com/samplecode.html
+It contains minor changes as well as added support for 'generate' API call
+It also provides scripts to run arbitrary Zuora Object queries and make payment & bill runs.
+
+== Installing the Gem
+    $ sudo gem sources -a http://gemcutter.org
+    $ sudo gem install zuora4r
+
+== Usage
+   zuora-query -u <username> -p <password> -e [prod|sandbox] <query>
+
+   zuora-payment-run -u <username> -p <password> -e [prod|sandbox] -a <account id> -i <invoice id> -d <effective date> -m <payment method id>
+
+   zuora-bill-run -u <username> -p <password> -e [prod|sandbox] -a <account id> -i <invoice date> -t <target date>
+
+== Copyright
+
+Copyright (c) 2010 Ning. See LICENSE for details.

@@ -1,0 +1,102 @@
+#!/usr/bin/env ruby
+#
+# Copyright 2010 Ning
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+$:.unshift(File::join(File::dirname(File::dirname(__FILE__)), 'lib'))
+
+require 'rubygems'
+require 'optparse'
+require 'json/pure'
+require 'zuora_client'
+
+username = nil
+password = nil
+environment = 'prod'
+account_id = nil
+invoice_id = nil
+effective_date = nil
+payment_method_id = nil
+
+
+opts = OptionParser.new do |opts|
+  opts.banner = 'Usage: zuora-payment-run -u <username> -p <password> -e [prod|sandbox] -a <account id> -i <invoice id> -d <effective date> -m <payment method id>'
+  opts.on('-u', '--user USERNAME', 'username') { |u| username = u }
+  opts.on('-p', '--pass PASSWORD', 'password') { |p| password = p }
+  opts.on('-e', '--env ENVIRONMENT', '[prod|sandbox] (default: prod)') { |e| environment = e }
+  opts.on('-a', '--accountId ACCOUNT ID', 'account id') { |e| account_id = e }
+  opts.on('-i', '--invoiceId INVOICE_ID', 'invoice_id') { |e| invoice_id = e }
+  opts.on('-d', '--effectiveDate EFFECTIVE DATE', 'effective date') { |e| effective_date = e }
+  opts.on('-m', '--paymentMethodId PAYMENT_METHOD_ID', 'payment method id') { |e| payment_method_id = e }
+  opts.on('-v', '--verbose', 'log harder') { $ZUORA_VERBOSE = true }
+end
+
+if ARGV.empty?
+  puts opts
+  exit
+end
+
+opts.parse!(ARGV)
+
+unless username and password and account_id and invoice_id and effective_date and payment_method_id
+  puts opts
+  exit 1
+end
+
+url = case environment.downcase
+  when 'sandbox'
+    ZuoraClient::SANDBOX_URL
+  else
+    ZuoraClient::PROD_URL
+end
+
+zuora_client = ZuoraClient.new(username, password, url)
+
+result = zuora_client.query("select Balance from Invoice where Id = '%s'" % invoice_id)
+if result.empty?
+  puts "Invalid invoice_id '#{invoice_id}'"
+  exit 1
+end
+amount = result.first['balance']
+
+payment = ZUORA::Payment.new
+payment.accountId = account_id
+payment.amount = amount
+payment.effectiveDate = effective_date
+payment.paymentMethodId = payment_method_id
+payment.status = 'Draft'
+payment.type = 'Electronic'
+
+result = zuora_client.create([payment])
+
+if result && result.first[:success]
+  payment_id = result.first[:id]
+  invoice_payment = ZUORA::InvoicePayment.new
+  invoice_payment.amount = amount
+  invoice_payment.invoiceId = invoice_id
+  invoice_payment.paymentId = payment_id
+
+  result = zuora_client.create([invoice_payment])
+
+  if result && result.first[:success]
+    payment = ZUORA::Payment.new
+    payment.id = payment_id
+    payment.status = 'Processed'
+
+    result = zuora_client.update([payment])
+  end
+
+end
+
+puts JSON.pretty_generate(result) if result

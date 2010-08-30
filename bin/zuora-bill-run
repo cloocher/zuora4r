@@ -1,0 +1,84 @@
+#!/usr/bin/env ruby
+#
+# Copyright 2010 Ning
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+$:.unshift(File::join(File::dirname(File::dirname(__FILE__)), 'lib'))
+
+require 'rubygems'
+require 'optparse'
+require 'json/pure'
+require 'zuora_client'
+
+username = nil
+password = nil
+environment = 'prod'
+account_id = nil
+invoice_date = nil
+target_date = nil
+
+
+opts = OptionParser.new do |opts|
+  opts.banner = 'Usage: zuora-payment-run -u <username> -p <password> -e [prod|sandbox] -a <account id> -i <invoice date> -t <target date>'
+  opts.on('-u', '--user USERNAME', 'username') { |u| username = u }
+  opts.on('-p', '--pass PASSWORD', 'password') { |p| password = p }
+  opts.on('-e', '--env ENVIRONMENT', '[prod|sandbox] (default: prod)') { |e| environment = e }
+  opts.on('-a', '--accountId ACCOUNT ID', 'account id') { |e| account_id = e }
+  opts.on('-i', '--invoiceDate INVOICE DATE', 'invoice date') { |e| invoice_date = e }
+  opts.on('-t', '--targetDate TARGET DATE', 'target date') { |e| target_date = e }
+  opts.on('-v', '--verbose', 'log harder') { $ZUORA_VERBOSE = true }
+end
+
+if ARGV.empty?
+  puts opts
+  exit
+end
+
+opts.parse!(ARGV)
+
+unless username and password and account_id and invoice_date and target_date
+  puts opts
+  exit 1
+end
+
+url = case environment.downcase
+  when 'sandbox'
+    ZuoraClient::SANDBOX_URL
+  else
+    ZuoraClient::PROD_URL
+end
+
+zuora_client = ZuoraClient.new(username, password, url)
+
+
+bill_run = ZUORA::BillRun.new
+bill_run.accountId = account_id
+bill_run.includesOneTime = true
+bill_run.includesRecurring = true
+bill_run.includesUsage = true
+bill_run.invoiceDate = invoice_date
+bill_run.targetDate = target_date
+
+result = zuora_client.generate([bill_run])
+
+if result && result.first[:success]
+  invoice = ZUORA::Invoice.new
+  invoice.id = result.first[:id]
+  invoice.status = 'Posted'
+
+  result = zuora_client.update([invoice])
+end
+
+
+puts JSON.pretty_generate(result) if result
