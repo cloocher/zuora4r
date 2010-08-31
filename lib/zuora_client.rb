@@ -115,7 +115,6 @@ class ZuoraClient
 
   def save_results_to_hash(save_results)
     result = []
-    puts save_results.inspect
     save_results.each do |record|
       row = {:success => record.success}
       if record.success
