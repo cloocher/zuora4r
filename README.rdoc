@@ -3,7 +3,9 @@
 Client for Zuora API
 
 This is a wrapper for sample code provided by Zuora - http://developer.zuora.com/samplecode.html
+
 It contains minor changes as well as added support for 'generate' API call
+
 It also provides scripts to run arbitrary Zuora Object queries and make payment & bill runs.
 
 == Installing the Gem
