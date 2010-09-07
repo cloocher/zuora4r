@@ -111,6 +111,16 @@ class ZuoraClient
     result || []
   end
 
+  def delete(type, ids)
+    begin
+      response = @client.delete(type, ids)
+      result = save_results_to_hash(response)
+    rescue Exception => e
+      puts e.message
+    end
+    result || []
+  end
+
   private
 
   def save_results_to_hash(save_results)
