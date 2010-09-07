@@ -1,4 +1,4 @@
-= zuora4r
+[]= zuora4r
 
 Client for Zuora API
 
@@ -18,6 +18,8 @@ It also provides scripts to run arbitrary Zuora Object queries and make payment 
    zuora-payment-run -u <username> -p <password> -e [prod|sandbox] -a <account id> -i <invoice id> -d <effective date> -m <payment method id>
 
    zuora-bill-run -u <username> -p <password> -e [prod|sandbox] -a <account id> -i <invoice date> -t <target date>
+
+   zuora-delete -u <username> -p <password> -e [prod|sandbox] -t [Account|Subscription|Payment|...] -i <id_1,...>
 
 == Copyright
 
