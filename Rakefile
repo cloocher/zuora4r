@@ -5,7 +5,7 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "zuora4r"
-    gem.version = "1.0.3"
+    gem.version = "1.0.4"
     gem.summary = "Zuora4r"
     gem.description = "A client for Zuora API"
     gem.email = "gene@ning.com"
@@ -15,7 +15,7 @@ begin
         "lib/**/*", "bin/**/*"]
     gem.add_dependency "soap4r", ">= 1.5.8"
     gem.add_dependency "json_pure", ">= 1.4.6"
-    gem.executables = ['zuora-query', 'zuora-create', 'zuora-bill-run', 'zuora-payment-run', 'zuora-delete', 'zq']
+    gem.executables = ['zuora-query', 'zuora-create', 'zuora-update', 'zuora-bill-run', 'zuora-payment-run', 'zuora-delete', 'zq']
     gem.requirements = ["none"]
     gem.bindir = "bin"
   end

@@ -6,7 +6,7 @@ This is a wrapper for sample code provided by {Zuora}[http://developer.zuora.com
 
 It contains minor changes as well as added support for 'generate' API call
 
-It also provides scripts to create Zuora Objects, run arbitrary queries, and make payment & bill runs.
+It also provides scripts to query, create, update, delete Zuora Objects, as well as make payment & bill runs.
 
 == Installing the Gem
     $ sudo gem sources -a http://gemcutter.org
@@ -16,6 +16,8 @@ It also provides scripts to create Zuora Objects, run arbitrary queries, and mak
     zuora-query -u <username> -p <password> -e [prod|sandbox] <query>
 
     zuora-create -u <username> -p <password> -e [prod|sandbox] <json representing object to create>
+
+    zuora-update -u <username> -p <password> -e [prod|sandbox] <json representing object to update>
 
     zuora-delete -u <username> -p <password> -e [prod|sandbox] -t [Account|Subscription|Payment|...] -i <id_1,...>
 
@@ -43,6 +45,23 @@ It also provides scripts to create Zuora Objects, run arbitrary queries, and mak
         "creditCardMaskNumber": "************1111",
         "id": "4028e6992b31191e012b3cf9a3b338c5"
       },
+    ]
+
+    # make above added payment method to be default for the account
+    zuora-update -u $ZUSER -p $ZPASS -e sandbox '{"Account": {"id": "4028e6992a031d78012a1b132dba1c9b", "defaultPaymentMethodId": "4028e6992b31191e012b3cf9a3b338c5"}}'
+    [
+      {
+        "success": true,
+        "id": "4028e6992a031d78012a1b132dba1c9b"
+      }
+    ]
+
+    # check account's default payment method
+    zuora-query -u $ZUSER -p $ZPASS -e sandbox "Select DefaultPaymentMethodId from Account where Id = '4028e6992a031d78012a1b132dba1c9b'"
+    [
+      {
+        "defaultPaymentMethodId": "4028e6992b31191e012b3cf9a3b338c5"
+      }
     ]
 
     # delete payment method
