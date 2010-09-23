@@ -47,6 +47,13 @@ It also provides scripts to create Zuora Objects, run arbitrary queries, and mak
 
     # delete payment method
     zuora-delete -u $ZUSER -p $ZPASS -e sandbox -t PaymentMethod -i 4028e6992b31191e012b3cf9a3b338c5
+    [
+      {
+        "success": true,
+        "id": "4028e6992b31191e012b3cf9a3b338c5"
+      }
+    ]
+
 
 == Copyright
 
