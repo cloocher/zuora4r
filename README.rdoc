@@ -15,11 +15,13 @@ It also provides scripts to create Zuora Objects, run arbitrary queries, and mak
 == Usage
     zuora-query -u <username> -p <password> -e [prod|sandbox] <query>
 
+    zuora-create -u <username> -p <password> -e [prod|sandbox] <json representing object to create>
+
+    zuora-delete -u <username> -p <password> -e [prod|sandbox] -t [Account|Subscription|Payment|...] -i <id_1,...>
+
     zuora-payment-run -u <username> -p <password> -e [prod|sandbox] -a <account id> -i <invoice id> -d <effective date> -m <payment method id>
 
     zuora-bill-run -u <username> -p <password> -e [prod|sandbox] -a <account id> -i <invoice date> -t <target date>
-
-    zuora-delete -u <username> -p <password> -e [prod|sandbox] -t [Account|Subscription|Payment|...] -i <id_1,...>
 
 == Examples
     export ZUSER=zuora_username

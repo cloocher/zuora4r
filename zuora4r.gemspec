@@ -5,14 +5,14 @@
 
 Gem::Specification.new do |s|
   s.name = %q{zuora4r}
-  s.version = "1.0.2"
+  s.version = "1.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Cloocher"]
-  s.date = %q{2010-09-07}
+  s.date = %q{2010-09-22}
   s.description = %q{A client for Zuora API}
   s.email = %q{gene@ning.com}
-  s.executables = ["zuora-query", "zuora-bill-run", "zuora-payment-run", "zuora-delete", "zq"]
+  s.executables = ["zuora-query", "zuora-create", "zuora-bill-run", "zuora-payment-run", "zuora-delete", "zq"]
   s.extra_rdoc_files = [
     "LICENSE",
      "README.rdoc"
@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
     "Rakefile",
      "bin/zq",
      "bin/zuora-bill-run",
+     "bin/zuora-create",
      "bin/zuora-delete",
      "bin/zuora-payment-run",
      "bin/zuora-query",
