@@ -52,6 +52,7 @@ class Account < ZObject
   attr_accessor :currency
   attr_accessor :customerServiceRepName
   attr_accessor :defaultPaymentMethodId
+  attr_accessor :paymentGateway
   attr_accessor :name
   attr_accessor :notes
   attr_accessor :paymentTerm
@@ -61,7 +62,7 @@ class Account < ZObject
   attr_accessor :status
   attr_accessor :updatedDate
 
-  def initialize(fieldsToNull = [], id = nil, accountNumber = nil, allowInvoiceEdit = nil, autoPay = nil, batch = nil, billCycleDay = nil, billToId = nil, createdDate = nil, crmId = nil, currency = nil, customerServiceRepName = nil, defaultPaymentMethodId = nil, name = nil, notes = nil, paymentTerm = nil, purchaseOrderNumber = nil, salesRepName = nil, soldToId = nil, status = nil, updatedDate = nil)
+  def initialize(fieldsToNull = [], id = nil, accountNumber = nil, allowInvoiceEdit = nil, autoPay = nil, batch = nil, billCycleDay = nil, billToId = nil, createdDate = nil, crmId = nil, currency = nil, customerServiceRepName = nil, defaultPaymentMethodId = nil, paymentGateway = nil, name = nil, notes = nil, paymentTerm = nil, purchaseOrderNumber = nil, salesRepName = nil, soldToId = nil, status = nil, updatedDate = nil)
     @fieldsToNull = fieldsToNull
     @id = id
     @accountNumber = accountNumber
@@ -75,6 +76,7 @@ class Account < ZObject
     @currency = currency
     @customerServiceRepName = customerServiceRepName
     @defaultPaymentMethodId = defaultPaymentMethodId
+    @paymentGateway = paymentGateway
     @name = name
     @notes = notes
     @paymentTerm = paymentTerm
