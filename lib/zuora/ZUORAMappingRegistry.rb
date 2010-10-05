@@ -52,6 +52,33 @@ module DefaultMappingRegistry
   )
 
   EncodedRegistry.register(
+    :class => ZUORA::Refund,
+    :schema_type => XSD::QName.new(NsObjectApiZuoraCom, "Refund"),
+    :schema_basetype => XSD::QName.new(NsObjectApiZuoraCom, "zObject"),
+    :schema_element => [
+      ["fieldsToNull", "SOAP::SOAPString[]", [0, nil]],
+      ["id", [nil, XSD::QName.new(NsObjectApiZuoraCom, "Id")], [0, 1]],
+      ["accountId", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "AccountId")], [0, 1]],
+      ["accountingCode", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "AccountingCode")], [0, 1]],
+      ["amount", ["SOAP::SOAPDouble", XSD::QName.new(NsObjectApiZuoraCom, "Amount")], [0, 1]],
+      ["comment", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "Comment")], [0, 1]],
+      ["createdById", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "CreatedById")], [0, 1]],
+      ["createdDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "CreatedDate")], [0, 1]],
+      ["gateway", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "Gateway")], [0, 1]],
+      ["gatewayResponse", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "GatewayResponse")], [0, 1]],
+      ["gatewayResponseCode", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "GatewayResponseCode")], [0, 1]],
+      ["methodType", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "MethodType")], [0, 1]],
+      ["paymentId", [nil, XSD::QName.new(NsObjectApiZuoraCom, "PaymentId")], [0, 1]],
+      ["referenceID", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "ReferenceID")], [0, 1]],
+      ["refundDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "RefundDate")], [0, 1]],
+      ["refundNumber", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "RefundNumber")], [0, 1]],
+      ["refundTransactionTime", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "RefundTransactionTime")], [0, 1]],
+      ["status", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "Status")], [0, 1]],
+      ["type", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "Type")], [0, 1]]
+    ]
+  )
+
+  EncodedRegistry.register(
     :class => ZUORA::Amendment,
     :schema_type => XSD::QName.new(NsObjectApiZuoraCom, "Amendment"),
     :schema_basetype => XSD::QName.new(NsObjectApiZuoraCom, "zObject"),
@@ -590,6 +617,33 @@ module DefaultMappingRegistry
       ["soldToId", [nil, XSD::QName.new(NsObjectApiZuoraCom, "SoldToId")], [0, 1]],
       ["status", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "Status")], [0, 1]],
       ["updatedDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "UpdatedDate")], [0, 1]]
+    ]
+  )
+
+  LiteralRegistry.register(
+    :class => ZUORA::Refund,
+    :schema_type => XSD::QName.new(NsObjectApiZuoraCom, "Refund"),
+    :schema_basetype => XSD::QName.new(NsObjectApiZuoraCom, "zObject"),
+    :schema_element => [
+      ["fieldsToNull", "SOAP::SOAPString[]", [0, nil]],
+      ["id", [nil, XSD::QName.new(NsObjectApiZuoraCom, "Id")], [0, 1]],
+      ["accountId", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "AccountId")], [0, 1]],
+      ["accountingCode", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "AccountingCode")], [0, 1]],
+      ["amount", ["SOAP::SOAPDouble", XSD::QName.new(NsObjectApiZuoraCom, "Amount")], [0, 1]],
+      ["comment", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "Comment")], [0, 1]],
+      ["createdById", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "CreatedById")], [0, 1]],
+      ["createdDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "CreatedDate")], [0, 1]],
+      ["gateway", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "Gateway")], [0, 1]],
+      ["gatewayResponse", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "GatewayResponse")], [0, 1]],
+      ["gatewayResponseCode", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "GatewayResponseCode")], [0, 1]],
+      ["methodType", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "MethodType")], [0, 1]],
+      ["paymentId", [nil, XSD::QName.new(NsObjectApiZuoraCom, "PaymentId")], [0, 1]],
+      ["referenceID", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "ReferenceID")], [0, 1]],
+      ["refundDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "RefundDate")], [0, 1]],
+      ["refundNumber", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "RefundNumber")], [0, 1]],
+      ["refundTransactionTime", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "RefundTransactionTime")], [0, 1]],
+      ["status", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "Status")], [0, 1]],
+      ["type", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "Type")], [0, 1]]
     ]
   )
 

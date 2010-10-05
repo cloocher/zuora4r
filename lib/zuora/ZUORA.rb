@@ -88,6 +88,49 @@ class Account < ZObject
   end
 end
 
+class Refund < ZObject
+  attr_accessor :fieldsToNull
+  attr_accessor :id
+  attr_accessor :accountId
+  attr_accessor :accountingCode
+  attr_accessor :amount
+  attr_accessor :comment
+  attr_accessor :createdById
+  attr_accessor :createdDate
+  attr_accessor :gateway
+  attr_accessor :gatewayResponse
+  attr_accessor :gatewayResponseCode
+  attr_accessor :methodType
+  attr_accessor :paymentId
+  attr_accessor :referenceID
+  attr_accessor :refundDate
+  attr_accessor :refundNumber
+  attr_accessor :refundTransactionTime
+  attr_accessor :status
+  attr_accessor :type
+
+  def initialize(fieldsToNull = [], id = nil, accountId = nil, accountingCode = nil, amount = nil, comment = nil, createdById = nil, createdDate = nil, gateway = nil, gatewayResponse = nil, gatewayResponseCode = nil, methodType = nil, paymentId = nil, referenceID = nil, refundDate = nil, refundNumber = nil, refundTransactionTime = nil, status = nil, type = nil)
+    @fieldsToNull = fieldsToNull
+    @id = id
+    @accountId = accountId
+    @accountingCode = accountingCode
+    @amount = amount
+    @comment = comment
+    @createdById = createdById
+    @createdDate = createdDate
+    @gateway = gateway
+    @gatewayResponse = gatewayResponse
+    @gatewayResponseCode = gatewayResponseCode
+    @methodType = methodType
+    @paymentId = paymentId
+    @referenceID = referenceID
+    @refundDate = refundDate
+    @refundNumber = refundNumber
+    @refundTransactionTime = refundTransactionTime
+    @status = status
+    @type = type
+  end
+end
 # {http://object.api.zuora.com/}Amendment
 #   fieldsToNull - SOAP::SOAPString
 #   id - (any)
