@@ -364,6 +364,7 @@ module DefaultMappingRegistry
       ["previousSubscriptionId", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "PreviousSubscriptionId")], [0, 1]],
       ["renewalTerm", ["SOAP::SOAPInt", XSD::QName.new(NsObjectApiZuoraCom, "RenewalTerm")], [0, 1]],
       ["serviceActivationDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "ServiceActivationDate")], [0, 1]],
+      ["subscriptionEndDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "SubscriptionEndDate")], [0, 1]],
       ["status", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "Status")], [0, 1]],
       ["termStartDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "TermStartDate")], [0, 1]],
       ["version", ["SOAP::SOAPInt", XSD::QName.new(NsObjectApiZuoraCom, "Version")], [0, 1]]
@@ -949,6 +950,7 @@ module DefaultMappingRegistry
       ["previousSubscriptionId", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "PreviousSubscriptionId")], [0, 1]],
       ["renewalTerm", ["SOAP::SOAPInt", XSD::QName.new(NsObjectApiZuoraCom, "RenewalTerm")], [0, 1]],
       ["serviceActivationDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "ServiceActivationDate")], [0, 1]],
+      ["subscriptionEndDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "SubscriptionEndDate")], [0, 1]],
       ["status", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "Status")], [0, 1]],
       ["termStartDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "TermStartDate")], [0, 1]],
       ["version", ["SOAP::SOAPInt", XSD::QName.new(NsObjectApiZuoraCom, "Version")], [0, 1]]

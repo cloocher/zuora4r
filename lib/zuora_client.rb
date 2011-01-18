@@ -43,8 +43,8 @@ end
 
 
 class ZuoraClient
-  PROD_URL = 'https://www.zuora.com/apps/services/a/21.0'
-  SANDBOX_URL = 'https://apisandbox.zuora.com/apps/services/a/23.0'
+  PROD_URL = 'https://www.zuora.com/apps/services/a/27.0'
+  SANDBOX_URL = 'https://apisandbox.zuora.com/apps/services/a/27.0'
 
   def initialize(username, password, url=PROD_URL)
     $ZUORA_USER = username
@@ -79,6 +79,15 @@ class ZuoraClient
       end
     end
     result
+  end
+
+  def subscribe(obj)
+    begin
+      response = @client.subscribe(obj)
+      return response
+    rescue Exception => e
+      puts e.message
+    end
   end
 
   def create(obj)
