@@ -440,8 +440,9 @@ class PaymentMethod < ZObject
   attr_accessor :paypalEmail
   attr_accessor :type
   attr_accessor :updatedDate
+  attr_accessor :numConsecutiveFailures
 
-  def initialize(fieldsToNull = [], id = nil, accountId = nil, achAbaCode = nil, achAccountName = nil, achAccountNumber = nil, achAccountNumberMask = nil, achAccountType = nil, achBankName = nil, active = nil, createdDate = nil, creditCardAddress1 = nil, creditCardAddress2 = nil, creditCardCity = nil, creditCardCountry = nil, creditCardExpirationMonth = nil, creditCardExpirationYear = nil, creditCardHolderName = nil, creditCardMaskNumber = nil, creditCardNumber = nil, creditCardPostalCode = nil, creditCardState = nil, creditCardType = nil, lastTransactionDateTime = nil, lastTransactionStatus = nil, name = nil, paypalBaid = nil, paypalEmail = nil, type = nil, updatedDate = nil)
+  def initialize(fieldsToNull = [], id = nil, accountId = nil, achAbaCode = nil, achAccountName = nil, achAccountNumber = nil, achAccountNumberMask = nil, achAccountType = nil, achBankName = nil, active = nil, createdDate = nil, creditCardAddress1 = nil, creditCardAddress2 = nil, creditCardCity = nil, creditCardCountry = nil, creditCardExpirationMonth = nil, creditCardExpirationYear = nil, creditCardHolderName = nil, creditCardMaskNumber = nil, creditCardNumber = nil, creditCardPostalCode = nil, creditCardState = nil, creditCardType = nil, lastTransactionDateTime = nil, lastTransactionStatus = nil, name = nil, paypalBaid = nil, paypalEmail = nil, type = nil, updatedDate = nil, numConsecutiveFailures = nil)
     @fieldsToNull = fieldsToNull
     @id = id
     @accountId = accountId
@@ -472,6 +473,7 @@ class PaymentMethod < ZObject
     @paypalEmail = paypalEmail
     @type = type
     @updatedDate = updatedDate
+    @numConsecutiveFailures = numConsecutiveFailures
   end
 end
 

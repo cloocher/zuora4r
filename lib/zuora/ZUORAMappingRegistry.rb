@@ -215,7 +215,8 @@ module DefaultMappingRegistry
       ["paypalBaid", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "PaypalBaid")], [0, 1]],
       ["paypalEmail", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "PaypalEmail")], [0, 1]],
       ["type", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "Type")], [0, 1]],
-      ["updatedDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "UpdatedDate")], [0, 1]]
+      ["updatedDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "UpdatedDate")], [0, 1]],
+      ["numConsecutiveFailures", ["SOAP::SOAPInt", XSD::QName.new(NsObjectApiZuoraCom, "NumConsecutiveFailures")], [0, 1]]
     ]
   )
 
@@ -801,7 +802,8 @@ module DefaultMappingRegistry
       ["paypalBaid", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "PaypalBaid")], [0, 1]],
       ["paypalEmail", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "PaypalEmail")], [0, 1]],
       ["type", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "Type")], [0, 1]],
-      ["updatedDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "UpdatedDate")], [0, 1]]
+      ["updatedDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "UpdatedDate")], [0, 1]],
+      ["numConsecutiveFailures", ["SOAP::SOAPInt", XSD::QName.new(NsObjectApiZuoraCom, "NumConsecutiveFailures")], [0, 1]]
     ]
   )
 

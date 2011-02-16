@@ -43,8 +43,8 @@ end
 
 
 class ZuoraClient
-  PROD_URL = 'https://www.zuora.com/apps/services/a/27.0'
-  SANDBOX_URL = 'https://apisandbox.zuora.com/apps/services/a/27.0'
+  PROD_URL = 'https://www.zuora.com/apps/services/a/28.0'
+  SANDBOX_URL = 'https://apisandbox.zuora.com/apps/services/a/28.0'
 
   def initialize(username, password, url=PROD_URL)
     $ZUORA_USER = username
