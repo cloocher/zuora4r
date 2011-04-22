@@ -11,7 +11,7 @@ begin
     gem.email = "gene@ning.com"
     gem.homepage = "http://github.com/cloocher/zuora4r"
     gem.authors = ["Cloocher"]
-    gem.files = FileList["CHANGES", "zuora4r.gemspec", "Rakefile", "README", "VERSION",
+    gem.files = FileList["CHANGES", "zuora4r.gemspec", "Rakefile", "README", "VERSION", "custom_fields.yml",
         "lib/**/*", "bin/**/*"]
     gem.add_dependency "soap4r", ">= 1.5.8"
     gem.add_dependency "json_pure", ">= 1.4.6"
