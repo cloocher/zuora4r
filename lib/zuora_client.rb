@@ -54,7 +54,7 @@ class ZuoraClient
     @client = ZuoraInterface.new
 
     # add custom fields, if any
-    custom_fields = YAML.load_file('../custom_fields.yml')
+    custom_fields = YAML.load_file(File.dirname(__FILE__) + '/../custom_fields.yml')
     if custom_fields
       custom_fields.each do |key, value|
         fields = value.strip.split(/\s+/).map { |e| "#{e}__c" }

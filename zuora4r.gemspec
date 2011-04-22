@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
     "bin/zuora-payment-run",
     "bin/zuora-query",
     "bin/zuora-update",
+    "custom_fields.yml",
     "lib/zuora/ZUORA.rb",
     "lib/zuora/ZUORADriver.rb",
     "lib/zuora/ZUORAMappingRegistry.rb",
