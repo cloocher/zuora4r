@@ -558,8 +558,17 @@ class ProductRatePlanCharge < ZObject
   attr_accessor :productRatePlanId
   attr_accessor :type
   attr_accessor :uOM
+  attr_accessor :chargeModel
+  attr_accessor :revRecCode
+  attr_accessor :triggerEvent
+  attr_accessor :chargeType
+  attr_accessor :billingPeriod
+  attr_accessor :billCycleType
+  attr_accessor :billingPeriodAlignement
+  attr_accessor :revRecTriggerCondition
+  attr_accessor :productRatePlanChargeTierData
 
-  def initialize(fieldsToNull = [], id = nil, accountingCode = nil, defaultQuantity = nil, description = nil, maxQuantity = nil, minQuantity = nil, model = nil, name = nil, productRatePlanId = nil, type = nil, uOM = nil)
+  def initialize(fieldsToNull = [], id = nil, accountingCode = nil, defaultQuantity = nil, description = nil, maxQuantity = nil, minQuantity = nil, model = nil, name = nil, productRatePlanId = nil, type = nil, uOM = nil, chargeModel = nil, revRecCode=nil, triggerEvent=nil, chargeType=nil, billingPeriod=nil, billCycleType=nil, billingPeriodAlignement=nil, revRecTriggerCondition=nil, productRatePlanChargeTierData=nil)
     @fieldsToNull = fieldsToNull
     @id = id
     @accountingCode = accountingCode
@@ -572,8 +581,26 @@ class ProductRatePlanCharge < ZObject
     @productRatePlanId = productRatePlanId
     @type = type
     @uOM = uOM
+    @chargeModel = chargeModel
+    @revRecCode=revRecCode,
+    @triggerEvent=triggerEvent,
+    @chargeType=chargeType,
+    @billingPeriod=billingPeriod,
+    @billCycleType=billCycleType,
+    @billingPeriodAlignement=billingPeriodAlignement
+    @revRecTriggerCondition=revRecTriggerCondition
+    @productRatePlanChargeTierData=productRatePlanChargeTierData
   end
 end
+
+class ProductRatePlanChargeTierData < ZObject
+  attr_accessor :productRatePlanChargeTier
+
+  def initialize(productRatePlanChargeTier = nil)
+    @productRatePlanChargeTier = productRatePlanChargeTier
+  end
+end
+
 
 # {http://object.api.zuora.com/}ProductRatePlanChargeTier
 #   fieldsToNull - SOAP::SOAPString
@@ -591,8 +618,10 @@ class ProductRatePlanChargeTier < ZObject
   attr_accessor :productRatePlanChargeId
   attr_accessor :startingUnit
   attr_accessor :tier
+  attr_accessor :active
+  attr_accessor :currency
 
-  def initialize(fieldsToNull = [], id = nil, endingUnit = nil, price = nil, productRatePlanChargeId = nil, startingUnit = nil, tier = nil)
+  def initialize(fieldsToNull = [], id = nil, endingUnit = nil, price = nil, productRatePlanChargeId = nil, startingUnit = nil, tier = nil, active=nil, currency=nil)
     @fieldsToNull = fieldsToNull
     @id = id
     @endingUnit = endingUnit
@@ -600,6 +629,8 @@ class ProductRatePlanChargeTier < ZObject
     @productRatePlanChargeId = productRatePlanChargeId
     @startingUnit = startingUnit
     @tier = tier
+    @active = active
+    @currency = currency
   end
 end
 

@@ -29,6 +29,7 @@
 
 require 'zuora_interface'
 require 'zuora/api'
+require 'yaml'
 
 class SOAP::Header::HandlerSet
   def reset
@@ -41,10 +42,9 @@ class SOAP::Header::HandlerSet
   end
 end
 
-
 class ZuoraClient
-  PROD_URL = 'https://www.zuora.com/apps/services/a/28.0'
-  SANDBOX_URL = 'https://apisandbox.zuora.com/apps/services/a/28.0'
+  PROD_URL = 'https://www.zuora.com/apps/services/a/27.0'
+  SANDBOX_URL = 'https://apisandbox.zuora.com/apps/services/a/27.0'
 
   def initialize(username, password, url=PROD_URL)
     $ZUORA_USER = username
@@ -52,6 +52,20 @@ class ZuoraClient
     $ZUORA_ENDPOINT = url
 
     @client = ZuoraInterface.new
+
+    # add custom fields, if any
+    custom_fields = YAML.load_file('../custom_fields.yml')
+    if custom_fields
+      custom_fields.each do |key, value|
+        fields = value.strip.split(/\s+/).map { |e| "#{e}__c" }
+        type_class = Object.const_get('ZUORA').const_get(key)
+        fields.each do |field|
+          custom_field = field.gsub(/^\w/) { |i| i.downcase }
+          type_class.send :attr_accessor, custom_field
+        end
+      end
+    end
+
     @client.session_start
   end
 
