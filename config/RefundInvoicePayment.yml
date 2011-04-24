@@ -1,0 +1,8 @@
+public:
+  CreatedById:
+  CreatedDate: dateTime
+  InvoicePaymentId:
+  RefundAmount: decimal
+  RefundId:
+  UpdatedById:
+  UpdatedDate: dateTime

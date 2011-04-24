@@ -1,0 +1,8 @@
+public:
+  Amount: decimal
+  CreatedById:
+  CreatedDate: dateTime
+  InvoiceId:
+  PaymentId:
+  UpdatedById:
+  UpdatedDate: dateTime

@@ -1,0 +1,10 @@
+public:
+  AccountId:
+  AccountNumber: string
+  Errors: Error[]
+  InvoiceId:
+  InvoiceNumber: string
+  PaymentTransactionNumber: string
+  SubscriptionId:
+  SubscriptionNumber: string
+  Success: boolean

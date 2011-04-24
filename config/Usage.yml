@@ -1,0 +1,20 @@
+public:
+  AccountId:
+  AccountNumber: string
+  ChargeId:
+  ChargeNumber: string
+  CreatedById:
+  CreatedDate: dateTime
+  Description: string
+  EndDateTime: dateTime
+  Quantity: decimal
+  RbeStatus: string
+  SourceName: string
+  SourceType: string
+  StartDateTime: dateTime
+  SubmissionDateTime: dateTime
+  SubscriptionId:
+  SubscriptionNumber: string
+  UOM: string
+  UpdatedById:
+  UpdatedDate: dateTime

@@ -1,0 +1,31 @@
+public:
+  AccountingCode: string
+  BillCycleDay: int
+  BillCycleType: string
+  BillingPeriod: string
+  BillingPeriodAlignment: string
+  ChargeModel: string
+  ChargeType: string
+  CreatedById:
+  CreatedDate: dateTime
+  DefaultQuantity: decimal
+  Description: string
+  IncludedUnits: decimal
+  MaxQuantity: decimal
+  MinQuantity: decimal
+  Model: string
+  Name: string
+  OverageCalculationOption: string
+  OverageUnusedUnitsCreditOption: string
+  ProductRatePlanId:
+  RevRecCode: string
+  RevRecTriggerCondition: string
+  SmoothingModel: string
+  SpecificBillingPeriod: long
+  Taxable: boolean
+  TaxCode: string
+  TriggerEvent: string
+  Type: string
+  UOM: string
+  UpdatedById:
+  UpdatedDate: dateTime

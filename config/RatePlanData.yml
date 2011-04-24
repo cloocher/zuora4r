@@ -1,0 +1,4 @@
+public:
+  RatePlan: RatePlan
+  RatePlanCharge: RatePlanCharge
+  RatePlanChargeData: RatePlanChargeData[]

@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = %q{zuora4r}
-  s.version = "1.1.0"
+  s.version = "1.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Cloocher"]
-  s.date = %q{2011-04-21}
-  s.description = %q{A client for Zuora API}
+  s.date = %q{2011-04-23}
+  s.description = %q{Simple Zuora API client for Ruby}
   s.email = %q{gene@ning.com}
   s.executables = ["zuora-query", "zuora-create", "zuora-update", "zuora-bill-run", "zuora-payment-run", "zuora-delete", "zq"]
   s.extra_rdoc_files = [
@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     "Rakefile",
+    "VERSION",
     "bin/zq",
     "bin/zuora-bill-run",
     "bin/zuora-create",
@@ -26,28 +27,62 @@ Gem::Specification.new do |s|
     "bin/zuora-payment-run",
     "bin/zuora-query",
     "bin/zuora-update",
-    "custom_fields.yml",
-    "lib/zuora/ZUORA.rb",
-    "lib/zuora/ZUORADriver.rb",
-    "lib/zuora/ZUORAMappingRegistry.rb",
-    "lib/zuora/ZuoraServiceClient.rb",
-    "lib/zuora/api.rb",
-    "lib/zuora_client.rb",
-    "lib/zuora_interface.rb",
+    "config/Account.yml",
+    "config/Adjustment.yml",
+    "config/AmendOptions.yml",
+    "config/Amendment.yml",
+    "config/CallOptions.yml",
+    "config/Contact.yml",
+    "config/CreditBalanceAdjustment.yml",
+    "config/Export.yml",
+    "config/Invoice.yml",
+    "config/InvoiceAdjustment.yml",
+    "config/InvoiceItem.yml",
+    "config/InvoiceItemAdjustment.yml",
+    "config/InvoicePayment.yml",
+    "config/InvoiceProcessingOptions.yml",
+    "config/LoginResult.yml",
+    "config/Payment.yml",
+    "config/PaymentMethod.yml",
+    "config/PreviewOptions.yml",
+    "config/Product.yml",
+    "config/ProductRatePlan.yml",
+    "config/ProductRatePlanCharge.yml",
+    "config/ProductRatePlanChargeTier.yml",
+    "config/ProductRatePlanChargeTierData.yml",
+    "config/RatePlan.yml",
+    "config/RatePlanCharge.yml",
+    "config/RatePlanChargeData.yml",
+    "config/RatePlanChargeTier.yml",
+    "config/RatePlanData.yml",
+    "config/Refund.yml",
+    "config/RefundInvoicePayment.yml",
+    "config/SessionHeader.yml",
+    "config/SubscribeOptions.yml",
+    "config/SubscribeRequest.yml",
+    "config/SubscribeResult.yml",
+    "config/SubscribeWithExistingAccountRequest.yml",
+    "config/Subscription.yml",
+    "config/SubscriptionData.yml",
+    "config/TaxationItem.yml",
+    "config/Usage.yml",
+    "lib/driver.rb",
+    "lib/mapping.rb",
+    "lib/models.rb",
+    "lib/zuora4r.rb",
     "zuora4r.gemspec"
   ]
   s.homepage = %q{http://github.com/cloocher/zuora4r}
   s.require_paths = ["lib"]
   s.requirements = ["none"]
-  s.rubygems_version = %q{1.3.7}
-  s.summary = %q{Zuora4r}
+  s.rubygems_version = %q{1.6.2}
+  s.summary = %q{Zuora API client}
   s.test_files = [
     "test/helper.rb",
     "test/test_zuora_client.rb"
   ]
 
   if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then

@@ -1,0 +1,44 @@
+public:
+  AccountingCode: string
+  ApplyDiscountTo: string
+  BillCycleDay: int
+  BillCycleType: string
+  BillingPeriodAlignment: string
+  ChargedThroughDate: dateTime
+  ChargeModel: string
+  ChargeNumber: string
+  ChargeType: string
+  CreatedById:
+  CreatedDate: dateTime
+  Description: string
+  DiscountAmount: decimal
+  DiscountLevel: string
+  DiscountPercentage: decimal
+  DMRC: decimal
+  DTCV: decimal
+  EffectiveEndDate: dateTime
+  EffectiveStartDate: dateTime
+  IncludedUnits: decimal
+  IsLastSegment: boolean
+  MRR: decimal
+  Name: string
+  NumberOfPeriods: long
+  OverageCalculationOption: string
+  OveragePrice: decimal
+  OverageUnusedUnitsCreditOption: string
+  Price: decimal
+  ProcessedThroughDate: dateTime
+  ProductRatePlanChargeId:
+  Quantity: decimal
+  RatePlanId:
+  RolloverBalance: decimal
+  Segment: int
+  TCV: decimal
+  TriggerDate: dateTime
+  TriggerEvent: string
+  UnusedUnitsCreditRates: decimal
+  UOM: string
+  UpdatedById:
+  UpdatedDate: dateTime
+  UpToPeriods: long
+  Version: long

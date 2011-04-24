@@ -1,0 +1,24 @@
+public:
+  AccountId:
+  AccountingCode: string
+  Amount: double
+  Comment: string
+  CreatedById:
+  CreatedDate: dateTime
+  Gateway: string
+  GatewayResponse: string
+  GatewayResponseCode: string
+  MethodType: string
+  PaymentId:
+  ReferenceId: string
+  RefundDate: dateTime
+  RefundNumber: string
+  RefundTransactionTime: dateTime
+  SoftDescriptor: string
+  SoftDescriptorPhone: string
+  SourceType: string
+  Status: string
+  TransferredToAccounting: string
+  Type: string
+  UpdatedById:
+  UpdatedDate: dateTime

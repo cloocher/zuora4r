@@ -1,0 +1,33 @@
+public:
+  AccountId:
+  AutoRenew: boolean
+  CancelledDate: dateTime
+  ContractAcceptanceDate: dateTime
+  ContractEffectiveDate: dateTime
+  CreatedById:
+  CreatedDate: dateTime
+  CreatorAccountId:
+  Currency: string
+  InitialTerm: int
+  IsInvoiceSeparate: boolean
+  Name: string
+  Notes: string
+  OriginalCreatedDate: dateTime
+  OriginalId:
+  OriginalSubscriptionId: string
+  PreviousSubscriptionId:
+  RenewalTerm: int
+  ServiceActivationDate: dateTime
+  Status: string
+  SubscriptionEndDate: dateTime
+  SubscriptionStartDate: dateTime
+  TermEndDate: dateTime
+  TermStartDate: dateTime
+  TermType: string
+  UpdatedById:
+  UpdatedDate: dateTime
+  Version: int
+  VersionCreatedDate: dateTime
+#private:
+#  Subdomain:
+#  AppID:

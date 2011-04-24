@@ -1,0 +1,18 @@
+public:
+  AccountId:
+  AccountingCode: string
+  AdjustmentDate: dateTime
+  AdjustmentNumber: string
+  Amount: decimal
+  CreatedDate: dateTime
+  CreatedById:
+  CreatedBy: string
+  CreatedOn: dateTime
+  CustomerName: string
+  CustomerNumber: string
+  LastUpdatedBy: string
+  LastUpdatedOn: dateTime
+  Status: string
+  Type: string
+  UpdatedDate: dateTime
+  UpdatedById:

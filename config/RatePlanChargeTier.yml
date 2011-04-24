@@ -1,0 +1,12 @@
+public:
+  CreatedById:
+  CreatedDate: dateTime
+  EndingUnit: decimal
+  IsOveragePrice: boolean
+  Price: decimal
+  PriceFormat: string
+  RatePlanChargeId:
+  StartingUnit: decimal
+  Tier: int
+  UpdatedById:
+  UpdatedDate: dateTime

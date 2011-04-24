@@ -1,0 +1,13 @@
+public:
+  CreatedById:
+  CreatedDate: dateTime
+  FileId:
+  Format: string
+  Name: string
+  Query: string
+  Size: int
+  Status: string
+  StatusReason: string
+  UpdatedDate: dateTime
+  UpdatedBy:
+  Zip: boolean

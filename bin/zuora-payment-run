@@ -19,7 +19,7 @@ $:.unshift(File::join(File::dirname(File::dirname(__FILE__)), 'lib'))
 require 'rubygems'
 require 'optparse'
 require 'json/pure'
-require 'zuora_client'
+require 'zuora4r'
 
 username = nil
 password = nil
@@ -28,7 +28,7 @@ account_id = nil
 invoice_id = nil
 effective_date = nil
 payment_method_id = nil
-
+verbose = false
 
 opts = OptionParser.new do |opts|
   opts.banner = 'Usage: zuora-payment-run -u <username> -p <password> -e [prod|sandbox] -a <account id> -i <invoice id> -d <effective date> -m <payment method id>'
@@ -39,7 +39,7 @@ opts = OptionParser.new do |opts|
   opts.on('-i', '--invoiceId INVOICE_ID', 'invoice_id') { |e| invoice_id = e }
   opts.on('-d', '--effectiveDate EFFECTIVE DATE', 'effective date') { |e| effective_date = e }
   opts.on('-m', '--paymentMethodId PAYMENT_METHOD_ID', 'payment method id') { |e| payment_method_id = e }
-  opts.on('-v', '--verbose', 'log harder') { $ZUORA_VERBOSE = true }
+  opts.on('-v', '--verbose', 'log harder') { verbose = true }
 end
 
 if ARGV.empty?
@@ -56,12 +56,12 @@ end
 
 url = case environment.downcase
   when 'sandbox'
-    ZuoraClient::SANDBOX_URL
+    Zuora4r::SANDBOX_URL
   else
-    ZuoraClient::PROD_URL
+    Zuora4r::PROD_URL
 end
 
-zuora_client = ZuoraClient.new(username, password, url)
+zuora_client = Zuora4r.new(username, password, url, verbose)
 
 result = zuora_client.query("select Balance from Invoice where Id = '%s'" % invoice_id)
 if result.empty?

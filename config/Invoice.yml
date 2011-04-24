@@ -1,0 +1,29 @@
+public:
+  AccountID:
+  AdjustmentAmount: decimal
+  Amount: decimal
+  AmountWithoutTax: decimal
+  Balance: decimal
+  Body: string
+  Comments: string
+  CreatedBy:
+  CreatedById:
+  CreatedDate: dateTime
+  DueDate: dateTime
+  IncludesOneTime: boolean
+  IncludesRecurring: boolean
+  IncludesUsage: boolean
+  InvoiceDate: dateTime
+  InvoiceNumber: string
+  LastEmailSentDate: dateTime
+  PaymentAmount: decimal
+  PostedBy:
+  PostedDate: dateTime
+  RefundAmount: decimal
+  Status: string
+  TargetDate: dateTime
+  TaxAmount: decimal
+  TaxExemptAmount: decimal
+  TransferredToAccounting: string
+  UpdatedBy:
+  UpdatedDate: dateTime

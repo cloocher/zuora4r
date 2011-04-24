@@ -1,0 +1,10 @@
+public:
+  AmendmentId:
+  AmendmentSubscriptionRatePlanId:
+  AmendmentType: string
+  CreatedById:
+  CreatedDate: dateTime
+  Name: string
+  SubscriptionId:
+  UpdatedById:
+  UpdatedDate: dateTime

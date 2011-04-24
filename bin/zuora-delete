@@ -19,13 +19,14 @@ $:.unshift(File::join(File::dirname(File::dirname(__FILE__)), 'lib'))
 require 'rubygems'
 require 'optparse'
 require 'json/pure'
-require 'zuora_client'
+require 'zuora4r'
 
 username = nil
 password = nil
 environment = 'prod'
 type = nil
 ids = nil
+verbose = false
 
 
 opts = OptionParser.new do |opts|
@@ -35,7 +36,7 @@ opts = OptionParser.new do |opts|
   opts.on('-e', '--env ENVIRONMENT', '[prod|sandbox] (default: prod)') { |e| environment = e }
   opts.on('-t', '--type TYPE', 'type (Account, Subscription, Payment, etc)') { |e| type = e }
   opts.on('-i', '--id IDs', 'id(s) to be removed') { |e| ids = e.split(',').map {|i| i.strip} }
-  opts.on('-v', '--verbose', 'log harder') { $ZUORA_VERBOSE = true }
+  opts.on('-v', '--verbose', 'log harder') { verbose = true }
 end
 
 if ARGV.empty?
@@ -52,12 +53,12 @@ end
 
 url = case environment.downcase
   when 'sandbox'
-    ZuoraClient::SANDBOX_URL
+    Zuora4r::SANDBOX_URL
   else
-    ZuoraClient::PROD_URL
+    Zuora4r::PROD_URL
 end
 
-zuora_client = ZuoraClient.new(username, password, url)
+zuora_client = Zuora4r.new(username, password, url, verbose)
 
 result = zuora_client.delete(type, ids)
 

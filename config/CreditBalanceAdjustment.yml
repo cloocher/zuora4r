@@ -1,0 +1,18 @@
+public:
+  AccountId:
+  AccountingCode: string
+  AdjustmentDate: dateTime
+  Amount: decimal
+  Comment: string
+  CreatedById:
+  CreatedDate: dateTime
+  Number: string
+  ReferenceId: string
+  SourceTransactionId:
+  SourceTransactionNumber: string
+  SourceTransactionType: string
+  Status: string
+  TransferredToAccounting: string
+  Type: string
+  UpdatedById:
+  UpdatedDate: dateTime

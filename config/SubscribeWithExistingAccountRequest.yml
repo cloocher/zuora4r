@@ -1,0 +1,4 @@
+public:
+  AccountId:
+  SubscribeOptions: SubscribeOptions
+  SubscriptionData: SubscriptionData

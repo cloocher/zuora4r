@@ -1,0 +1,19 @@
+public:
+  AutoRenew: boolean
+  ContractEffectiveDate: dateTime
+  CreatedById:
+  CreatedDate: dateTime
+  CustomerAcceptanceDate: dateTime
+  Description: string
+  DestinationAccountId:
+  EffectiveDate: dateTime
+  InitialTerm: long
+  Name: string
+  RenewalTerm: long
+  ServiceActivationDate: dateTime
+  Status: string
+  SubscriptionId:
+  TermStartDate: date
+  Type: string
+  UpdatedById:
+  UpdatedDate: dateTime

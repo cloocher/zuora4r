@@ -1,0 +1,29 @@
+public:
+  AccountID:
+  AccountingCode: string
+  Amount: decimal
+  AppliedCreditBalanceAmount: decimal
+  AppliedInvoiceAmount: decimal
+  AuthTransactionId: string
+  BankIdentificationNumber: string
+  Comment: string
+  CreatedById:
+  CreatedDate: dateTime
+  EffectiveDate: dateTime
+  GatewayOrderId: string
+  GatewayResponse: string
+  GatewayResponseCode: string
+  InvoiceId:
+  InvoiceNumber:
+  PaymentMethodID:
+  PaymentNumber: string
+  ReferenceId: string
+  RefundAmount: decimal
+  SecondPaymentReferenceId: string
+  SoftDescriptor: string
+  SoftDescriptorPhone: string
+  Status: string
+  TransferredToAccounting: string
+  Type: string
+  UpdatedById:
+  UpdatedDate: dateTime

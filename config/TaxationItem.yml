@@ -1,0 +1,18 @@
+public:
+  AccountingCode: string
+  CreatedById:
+  CreatedDate: dateTime
+  ExemptAmount: decimal
+  InvoiceItemId:
+  Jurisdiction: string
+  LocationCode: string
+  Name: string
+  TaxAmount: decimal
+  TaxCode: string
+  TaxCodeDescription: string
+  TaxDate: dateTime
+  TaxRate: decimal
+  TaxRateDescription: string
+  TaxRateType: string
+  UpdatedById:
+  UpdatedDate: dateTime

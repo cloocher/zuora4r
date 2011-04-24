@@ -1,0 +1,26 @@
+public:
+  AccountId:
+  AccountingCode: string
+  AdjustmentDate: dateTime
+  AdjustmentNumber: string
+  Amount: decimal
+  CancelledById:
+  CancelledDate: dateTime
+  Comment: string
+  CreatedById:
+  CreatedDate: dateTime
+  CustomerName: string
+  CustomerNumber: string
+  InvoiceId:
+  InvoiceItemName: string
+  InvoiceNumber: string
+  ReferenceId: string
+  ServiceEndDate: dateTime
+  ServiceStartDate: dateTime
+  SourceId:
+  SourceType: string
+  Status: string
+  TransferredToAccounting: string
+  Type: string
+  UpdatedById:
+  UpdatedDate: dateTime

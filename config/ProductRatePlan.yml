@@ -1,0 +1,15 @@
+public:
+  CreatedById:
+  CreatedDate: dateTime
+  Description: string
+  EffectiveEndDate: dateTime
+  EffectiveStartDate: dateTime
+  Name: string
+  ProductId:
+  UpdatedById:
+  UpdatedDate: dateTime
+#private:
+#  Duration:
+#  Trial:
+#  Slug:
+#  NextSlug:

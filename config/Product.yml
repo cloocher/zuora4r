@@ -1,0 +1,14 @@
+public:
+  CreatedById:
+  CreatedDate: dateTime
+  Description: string
+  EffectiveEndDate: dateTime
+  EffectiveStartDate: dateTime
+  Name: string
+  SKU: string
+  UpdatedById:
+  UpdatedDate: dateTime
+#private:
+#  NumInstances:
+#  InclusionList:
+#  AvailabilityList:

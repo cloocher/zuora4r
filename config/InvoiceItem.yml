@@ -1,0 +1,30 @@
+public:
+  AccountingCode: string
+  ChargeAmount: decimal
+  ChargeDate: dateTime
+  ChargeDescription: string
+  ChargeName: string
+  ChargeNumber: string
+  CreatedById:
+  CreatedDate: dateTime
+  InvoiceId:
+  ProductDescription: string
+  ProductId:
+  ProductName: string
+  Quantity: decimal
+  RatePlanChargeId:
+  RevRecCode: string
+  RevRecStartDate: dateTime
+  RevRecTriggerCondition: string
+  ServiceEndDate: dateTime
+  ServiceStartDate: dateTime
+  SKU: string
+  SubscriptionId:
+  SubscriptionNumber: string
+  TaxAmount: decimal
+  TaxCode: string
+  TaxExemptAmount: decimal
+  UnitPrice: decimal
+  UOM: string
+  UpdatedById:
+  UpdatedDate: dateTime

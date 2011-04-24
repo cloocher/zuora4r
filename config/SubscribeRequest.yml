@@ -1,0 +1,7 @@
+public:
+  Account: Account
+  BillToContact: Contact
+  PaymentMethod: PaymentMethod
+  SoldToContact: Contact
+  SubscribeOptions: SubscribeOptions
+  SubscriptionData: SubscriptionData

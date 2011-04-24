@@ -19,7 +19,7 @@ $:.unshift(File::join(File::dirname(File::dirname(__FILE__)), 'lib'))
 require 'rubygems'
 require 'optparse'
 require 'json/pure'
-require 'zuora_client'
+require 'zuora4r'
 
 username = nil
 password = nil
@@ -27,6 +27,7 @@ environment = 'prod'
 account_id = nil
 invoice_date = nil
 target_date = nil
+verbose = false
 
 
 opts = OptionParser.new do |opts|
@@ -37,7 +38,7 @@ opts = OptionParser.new do |opts|
   opts.on('-a', '--accountId ACCOUNT ID', 'account id') { |e| account_id = e }
   opts.on('-i', '--invoiceDate INVOICE DATE', 'invoice date') { |e| invoice_date = e }
   opts.on('-t', '--targetDate TARGET DATE', 'target date') { |e| target_date = e }
-  opts.on('-v', '--verbose', 'log harder') { $ZUORA_VERBOSE = true }
+  opts.on('-v', '--verbose', 'log harder') { verbose = true }
 end
 
 if ARGV.empty?
@@ -54,23 +55,23 @@ end
 
 url = case environment.downcase
   when 'sandbox'
-    ZuoraClient::SANDBOX_URL
+    Zuora4r::SANDBOX_URL
   else
-    ZuoraClient::PROD_URL
+    Zuora4r::PROD_URL
 end
 
-zuora_client = ZuoraClient.new(username, password, url)
+zuora_client = Zuora4r.new(username, password, url, verbose)
 
 
-bill_run = ZUORA::BillRun.new
-bill_run.accountId = account_id
-bill_run.includesOneTime = true
-bill_run.includesRecurring = true
-bill_run.includesUsage = true
-bill_run.invoiceDate = invoice_date
-bill_run.targetDate = target_date
+invoice = ZUORA::Invoice.new
+invoice.accountId = account_id
+invoice.includesOneTime = true
+invoice.includesRecurring = true
+invoice.includesUsage = true
+invoice.invoiceDate = invoice_date
+invoice.targetDate = target_date
 
-result = zuora_client.generate([bill_run])
+result = zuora_client.generate([invoice])
 
 if result && result.first[:success]
   invoice = ZUORA::Invoice.new

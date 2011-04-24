@@ -1,0 +1,42 @@
+public:
+  AccountId:
+  AchAbaCode: string
+  AchAccountName: string
+  AchAccountNumber: string
+  AchAccountNumberMask: string
+  AchAccountType: string
+  AchBankName: string
+  Active: boolean
+  BankIdentificationNumber: string
+  CreatedById:
+  CreatedDate: dateTime
+  CreditCardAddress1: string
+  CreditCardAddress2: string
+  CreditCardCity: string
+  CreditCardCountry: string
+  CreditCardExpirationMonth: int
+  CreditCardExpirationYear: int
+  CreditCardHolderName: string
+  CreditCardMaskNumber: string
+  CreditCardNumber: string
+  CreditCardPostalCode: string
+  CreditCardSecurityCode: string
+  CreditCardState: string
+  CreditCardType: string
+  DeviceSessionId: string
+  Email: string
+  IPAddress: string
+  LastFailedSaleTransactionDate: dateTime
+  LastTransactionDateTime: dateTime
+  LastTransactionStatus: string
+  MaxConsecutivePaymentFailures: short
+  Name: string
+  NumConsecutiveFailures: int
+  PaypalBaid: string
+  PaypalEmail: string
+  PaypalPreapprovalKey: string
+  PaypalType: string
+  SkipValidation: boolean
+  Type: string
+  UpdatedById:
+  UpdatedDate: dateTime

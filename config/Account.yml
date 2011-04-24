@@ -1,0 +1,42 @@
+public:
+  AccountNumber: string
+  AdditionalEmailAddresses: string
+  AllowInvoiceEdit: boolean
+  AutoPay: boolean
+  Balance: decimal
+  Batch: string
+  BillCycleDay: int
+  BillToId:
+  CreatedById:
+  CreatedDate: dateTime
+  CreditBalance: decimal
+  CrmId: string
+  Currency: string
+  CustomerServiceRepName: string
+  DefaultPaymentMethodId:
+  Gateway: string
+  InvoiceDeliveryPrefsEmail: boolean
+  InvoiceDeliveryPrefsPrint: boolean
+  InvoiceTemplateId:
+  LastInvoiceDate: dateTime
+  Name: string
+  Notes: string
+  PaymentGateway: string
+  PaymentTerm: string
+  PurchaseOrderNumber: string
+  SalesRepName: string
+  SoldToId:
+  Status: string
+  TaxExemptCertificateId:
+  TaxExemptCertificateType: string
+  TaxExemptDescription: string
+  TaxExemptEffectiveDate: dateTime
+  TaxExemptExpirationDate: dateTime
+  TaxExemptIssuingJurisdiction: string
+  TaxExemptStatus: string
+  TotalInvoiceBalance: decimal
+  UpdatedById:
+  UpdatedDate: dateTime
+private:
+  ScreenName:
+  Locale:

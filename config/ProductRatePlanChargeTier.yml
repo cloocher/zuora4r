@@ -1,0 +1,14 @@
+public:
+  Active: boolean
+  CreatedById:
+  CreatedDate: dateTime
+  Currency: string
+  EndingUnit: decimal
+  IsOveragePrice: boolean
+  Price: decimal
+  PriceFormat: string
+  ProductRatePlanChargeId:
+  StartingUnit: decimal
+  Tier: int
+  UpdatedById:
+  UpdatedDate: dateTime

@@ -1,0 +1,3 @@
+public:
+  GenerateInvoice: boolean
+  ProcessPayments: boolean

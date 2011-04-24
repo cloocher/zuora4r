@@ -1,0 +1,3 @@
+public:
+  RatePlanCharge: RatePlanCharge
+  RatePlanChargeTier: RatePlanChargeTier[]

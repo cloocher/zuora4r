@@ -1,0 +1,26 @@
+public:
+  AccountId:
+  Address1: string
+  Address2: string
+  City: string
+  Country: string
+  County: string
+  CreatedById:
+  CreatedDate: dateTime
+  Description: string
+  Fax: string
+  FirstName: string
+  HomePhone: string
+  LastName: string
+  MobilePhone: string
+  NickName: string
+  OtherPhone: string
+  OtherPhoneType: string
+  PersonalEmail: string
+  PostalCode: string
+  State: string
+  TaxRegion: string
+  UpdatedById:
+  UpdatedDate: dateTime
+  WorkEmail: string
+  WorkPhone: string
