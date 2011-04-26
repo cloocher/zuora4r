@@ -121,17 +121,6 @@ module ZUORA
   class Usage < ZObject
   end
 
-  class BillRun < ZObject
-    attr_accessor :fieldsToNull
-    attr_accessor :id
-    attr_accessor :accountId
-    attr_accessor :includesOneTime
-    attr_accessor :includesRecurring
-    attr_accessor :includesUsage
-    attr_accessor :invoiceDate
-    attr_accessor :targetDate
-  end
-
   class SubscribeResult
     attr_accessor :accountId
     attr_accessor :accountNumber

@@ -115,7 +115,11 @@ class Zuora4r
 
   def create(obj)
     begin
-      return save_results_to_hash(@client.create(obj))
+      puts ">>>>>>>> CREATE START"
+      response = @client.create(obj)
+      puts ">>>>>>>> CREATE FINISH: #{response}"
+#      return save_results_to_hash(@client.create(obj))
+      return save_results_to_hash(response)
     rescue Exception => e
       puts e.message
     end
