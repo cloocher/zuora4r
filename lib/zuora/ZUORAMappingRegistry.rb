@@ -47,7 +47,8 @@ module DefaultMappingRegistry
       ["salesRepName", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "SalesRepName")], [0, 1]],
       ["soldToId", [nil, XSD::QName.new(NsObjectApiZuoraCom, "SoldToId")], [0, 1]],
       ["status", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "Status")], [0, 1]],
-      ["updatedDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "UpdatedDate")], [0, 1]]
+      ["updatedDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "UpdatedDate")], [0, 1]],
+      ["invoiceDeliveryPrefsEmail", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "InvoiceDeliveryPrefsEmail")], [0, 1]]
     ]
   )
 
@@ -638,7 +639,8 @@ module DefaultMappingRegistry
       ["salesRepName", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "SalesRepName")], [0, 1]],
       ["soldToId", [nil, XSD::QName.new(NsObjectApiZuoraCom, "SoldToId")], [0, 1]],
       ["status", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "Status")], [0, 1]],
-      ["updatedDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "UpdatedDate")], [0, 1]]
+      ["updatedDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "UpdatedDate")], [0, 1]],
+      ["invoiceDeliveryPrefsEmail", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "InvoiceDeliveryPrefsEmail")], [0, 1]]
     ]
   )
 

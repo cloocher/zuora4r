@@ -61,6 +61,7 @@ class Account < ZObject
   attr_accessor :soldToId
   attr_accessor :status
   attr_accessor :updatedDate
+  attr_accessor :invoiceDeliveryPrefsEmail
 
   def initialize(fieldsToNull = [], id = nil, accountNumber = nil, allowInvoiceEdit = nil, autoPay = nil, batch = nil, billCycleDay = nil, billToId = nil, createdDate = nil, crmId = nil, currency = nil, customerServiceRepName = nil, defaultPaymentMethodId = nil, paymentGateway = nil, name = nil, notes = nil, paymentTerm = nil, purchaseOrderNumber = nil, salesRepName = nil, soldToId = nil, status = nil, updatedDate = nil)
     @fieldsToNull = fieldsToNull
