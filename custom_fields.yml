@@ -1,5 +1,15 @@
-# custom fields go here
-# ex:
-#Account:
-#  FullName
-#  Locale
+Account:
+  ScreenName
+  Locale
+Subscription:
+  AppID
+  Subdomain
+Product:
+  NumInstances
+  InclusionList
+  AvailabilityList
+ProductRatePlan:
+  Slug
+  NextSlug
+  Duration
+  Trial
