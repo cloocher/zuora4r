@@ -43,8 +43,12 @@ class SOAP::Header::HandlerSet
 end
 
 class ZuoraClient
+  
   PROD_URL = 'https://www.zuora.com/apps/services/a/27.0'
   SANDBOX_URL = 'https://apisandbox.zuora.com/apps/services/a/27.0'
+
+  # Export configured custom fields 
+  attr_reader :custom_fields
 
   def initialize(username, password, url=PROD_URL)
     $ZUORA_USER = username
@@ -54,9 +58,9 @@ class ZuoraClient
     @client = ZuoraInterface.new
 
     # add custom fields, if any
-    custom_fields = YAML.load_file(File.dirname(__FILE__) + '/../custom_fields.yml')
-    if custom_fields
-      custom_fields.each do |key, value|
+    @custom_fields = YAML.load_file(File.dirname(__FILE__) + '/../custom_fields.yml')
+    if @custom_fields
+      @custom_fields.each do |key, value|
         fields = value.strip.split(/\s+/).map { |e| "#{e}__c" }
         type_class = Object.const_get('ZUORA').const_get(key)
         fields.each do |field|
@@ -66,7 +70,7 @@ class ZuoraClient
       end
     end
 
-    @client.session_start(custom_fields)
+    @client.session_start(@custom_fields)
   end
 
   def query(query_string)
