@@ -47,9 +47,21 @@ class ZuoraClient
   PROD_URL = 'https://www.zuora.com/apps/services/a/27.0'
   SANDBOX_URL = 'https://apisandbox.zuora.com/apps/services/a/27.0'
 
-  # Export configured custom fields 
-  attr_reader :custom_fields
-
+  def self.parse_custom_fields
+    custom_fields = YAML.load_file(File.dirname(__FILE__) + '/../custom_fields.yml')
+     if custom_fields
+       custom_fields.each do |key, value|
+         fields = value.strip.split(/\s+/).map { |e| "#{e}__c" }
+         type_class = Object.const_get('ZUORA').const_get(key)
+         fields.each do |field|
+           custom_field = field.gsub(/^\w/) { |i| i.downcase }
+           type_class.send :attr_accessor, custom_field
+         end
+       end
+     end
+     custom_fields
+  end
+  
   def initialize(username, password, url=PROD_URL)
     $ZUORA_USER = username
     $ZUORA_PASSWORD = password
@@ -58,19 +70,8 @@ class ZuoraClient
     @client = ZuoraInterface.new
 
     # add custom fields, if any
-    @custom_fields = YAML.load_file(File.dirname(__FILE__) + '/../custom_fields.yml')
-    if @custom_fields
-      @custom_fields.each do |key, value|
-        fields = value.strip.split(/\s+/).map { |e| "#{e}__c" }
-        type_class = Object.const_get('ZUORA').const_get(key)
-        fields.each do |field|
-          custom_field = field.gsub(/^\w/) { |i| i.downcase }
-          type_class.send :attr_accessor, custom_field
-        end
-      end
-    end
-
-    @client.session_start(@custom_fields)
+    custom_fields = ZuoraClient.parse_custom_fields
+    @client.session_start(custom_fields)
   end
 
   def query(query_string)
