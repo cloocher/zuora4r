@@ -157,8 +157,9 @@ class ZuoraInterface
     @session.session = @z.login(loginargs).result.session
   end
 
-  def session_start
+  def session_start(custom_fields)
     get_driver
+    @z.do_init(custom_fields)
     session_cleanup
     login
     @z.headerhandler.set @session

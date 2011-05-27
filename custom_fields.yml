@@ -8,6 +8,7 @@ Product:
   NumInstances
   InclusionList
   AvailabilityList
+  ProductType
 ProductRatePlan:
   Slug
   NextSlug

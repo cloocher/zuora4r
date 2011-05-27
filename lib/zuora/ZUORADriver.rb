@@ -76,8 +76,30 @@ class Soap < ::SOAP::RPC::Driver
     super(endpoint_url, nil)
     self.mapping_registry = DefaultMappingRegistry::EncodedRegistry
     self.literal_mapping_registry = DefaultMappingRegistry::LiteralRegistry
-    init_methods
   end
+
+
+
+ def do_init(custom_fields)
+
+   if custom_fields
+     custom_fields.each do |key, value|
+       fields = value.strip.split(/\s+/).map { |e| "#{e}__c" }
+       type_class = Object.const_get('ZUORA').const_get(key)
+
+       product_definition = self.literal_mapping_registry.schema_definition_from_class(type_class)        
+
+       fields.each do |field|
+         field_uncapitalize = field.gsub(/^\w/) { |i| i.downcase }
+         element_definition_input = [field_uncapitalize, ["SOAP::SOAPString", XSD::QName.new(ZUORA::DefaultMappingRegistry::NsObjectApiZuoraCom, field)], [0, 1]]
+         element_schema_definition = ::SOAP::Mapping::parse_schema_element_definition(element_definition_input, nil)
+         product_definition.elements << element_schema_definition
+       end
+     end
+   end
+
+   init_methods
+ end
 
 private
 

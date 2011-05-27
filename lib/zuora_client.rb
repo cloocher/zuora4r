@@ -66,7 +66,7 @@ class ZuoraClient
       end
     end
 
-    @client.session_start
+    @client.session_start(custom_fields)
   end
 
   def query(query_string)
