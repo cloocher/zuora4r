@@ -10,6 +10,7 @@ Product:
   AvailabilityList
   ProductType
 ProductRatePlan:
+  NumInstances
   Slug
   NextSlug
   Duration
