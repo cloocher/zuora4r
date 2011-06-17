@@ -74,6 +74,8 @@ class Soap < ::SOAP::RPC::Driver
   def initialize(endpoint_url = nil)
     endpoint_url ||= $ZUORA_ENDPOINT
     super(endpoint_url, nil)
+    streamhandler.client.connect_timeout = 360
+    streamhandler.client.receive_timeout = 360
     self.mapping_registry = DefaultMappingRegistry::EncodedRegistry
     self.literal_mapping_registry = DefaultMappingRegistry::LiteralRegistry
   end
