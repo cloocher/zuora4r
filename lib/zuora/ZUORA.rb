@@ -164,8 +164,9 @@ class Amendment < ZObject
   attr_accessor :termCommitment
   attr_accessor :termStartDate
   attr_accessor :type
+  attr_accessor :ratePlanData
 
-  def initialize(fieldsToNull = [], id = nil, contractEffectiveDate = nil, customerAcceptanceDate = nil, description = nil, effectiveDate = nil, initialTerm = nil, name = nil, renewalTerm = nil, serviceActivationDate = nil, status = nil, subscriptionId = nil, termCommitment = nil, termStartDate = nil, type = nil)
+  def initialize(fieldsToNull = [], id = nil, contractEffectiveDate = nil, customerAcceptanceDate = nil, description = nil, effectiveDate = nil, initialTerm = nil, name = nil, renewalTerm = nil, serviceActivationDate = nil, status = nil, subscriptionId = nil, termCommitment = nil, termStartDate = nil, type = nil, ratePlanData =[])
     @fieldsToNull = fieldsToNull
     @id = id
     @contractEffectiveDate = contractEffectiveDate
@@ -181,6 +182,7 @@ class Amendment < ZObject
     @termCommitment = termCommitment
     @termStartDate = termStartDate
     @type = type
+    @ratePlanData = ratePlanData
   end
 end
 
@@ -297,6 +299,30 @@ class Invoice < ZObject
   end
 end
 
+class InvoiceItemAdjustment < ZObject
+  attr_accessor :fieldsToNull
+  attr_accessor :id
+  attr_accessor :accountId
+  attr_accessor :amount
+  attr_accessor :sourceId
+  attr_accessor :invoiceId
+  attr_accessor :type
+  attr_accessor :sourceType
+  attr_accessor :adjustmentDate
+  
+  def initialize(fieldsToNull = [], id = nil, accountId = nil, amount = nil, sourceId = nil, invoiceId = nil, type = nil, sourceType = nil, adjustmentDate = nil)
+    @fieldsToNull = fieldsToNull
+    @id = id
+    @accountId = accountId
+    @amount = amount
+    @sourceId = sourceId
+    @invoiceId = invoiceId
+    @type = type
+    @sourceType = sourceType
+    @adjustmentDate = adjustmentDate
+  end
+end
+  
   class BillRun < ZObject
     attr_accessor :fieldsToNull
     attr_accessor :id
@@ -710,8 +736,9 @@ class RatePlanCharge < ZObject
   attr_accessor :tCV
   attr_accessor :triggerEvent
   attr_accessor :uOM
+  attr_accessor :chargedThroughDate
 
-  def initialize(fieldsToNull = [], id = nil, accountingCode = nil, chargeModel = nil, chargeNumber = nil, chargeType = nil, description = nil, dMRC = nil, dTCV = nil, includedUnits = nil, mRR = nil, name = nil, numberOfPeriods = nil, overagePrice = nil, price = nil, productRatePlanChargeId = nil, quantity = nil, ratePlanId = nil, tCV = nil, triggerEvent = nil, uOM = nil)
+  def initialize(fieldsToNull = [], id = nil, accountingCode = nil, chargeModel = nil, chargeNumber = nil, chargeType = nil, description = nil, dMRC = nil, dTCV = nil, includedUnits = nil, mRR = nil, name = nil, numberOfPeriods = nil, overagePrice = nil, price = nil, productRatePlanChargeId = nil, quantity = nil, ratePlanId = nil, tCV = nil, triggerEvent = nil, uOM = nil, chargedThroughDate = nil)
     @fieldsToNull = fieldsToNull
     @id = id
     @accountingCode = accountingCode
@@ -733,6 +760,7 @@ class RatePlanCharge < ZObject
     @tCV = tCV
     @triggerEvent = triggerEvent
     @uOM = uOM
+    @chargedThroughDate = chargedThroughDate
   end
 end
 
@@ -962,10 +990,22 @@ end
 class RatePlanData
   attr_accessor :ratePlan
   attr_accessor :ratePlanCharge
+  attr_accessor :ratePlanChargeData
 
-  def initialize(ratePlan = nil, ratePlanCharge = [])
+  def initialize(ratePlan = nil, ratePlanCharge = nil, ratePlanChargeData = [])
     @ratePlan = ratePlan
     @ratePlanCharge = ratePlanCharge
+    @ratePlanChargeData = ratePlanChargeData
+  end
+end
+
+class RatePlanChargeData
+  attr_accessor :ratePlanCharge
+  attr_accessor :ratePlanChargeTier
+
+  def initialize(ratePlanCharge = nil, ratePlanChargeTier = [])
+    @ratePlanCharge = ratePlanCharge
+    @ratePlanChargeTier = ratePlanChargeTier
   end
 end
 

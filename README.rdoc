@@ -30,7 +30,7 @@ It also provides scripts to query, create, update, delete Zuora Objects, as well
     export ZPASS=zuora_password
 
     # create new payment method
-    zuora-create -u $ZUSER -p ZPASS -e sandbox '{"PaymentMethod": {"accountId": "4028e6992a031d78012a1b132dba1c9b", "creditCardAddress1": "52 Vexford Lane", "creditCardCity": "United States", "creditCardExpirationMonth": "12", "creditCardExpirationYear": "2010", "creditCardHolderName": "Firstly Lastly", "creditCardNumber": "4111111111111111", "creditCardPostalCode": "22042", "creditCardState": "California", "creditCardType": "Visa", "type": "CreditCard"}}'
+    zuora-create -u $ZUSER -p $ZPASS -e sandbox '{"PaymentMethod": {"accountId": "4028e6992a031d78012a1b132dba1c9b", "creditCardAddress1": "52 Vexford Lane", "creditCardCity": "United States", "creditCardExpirationMonth": "12", "creditCardExpirationYear": "2010", "creditCardHolderName": "Firstly Lastly", "creditCardNumber": "4111111111111111", "creditCardPostalCode": "22042", "creditCardState": "California", "creditCardType": "Visa", "type": "CreditCard"}}'
     [
       {
         "success": true,
